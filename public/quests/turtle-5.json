@@ -1,0 +1,49 @@
+{
+  "id": "turtle-5",
+  "gameType": "turtle",
+  "level": 5,
+  "titleKey": "Games.turtle",
+  "descriptionKey": "Turtle.helpText5",
+  "translations": {
+    "en": {
+      "Turtle.helpText5": "Goal: Draw a pentagon. Hint: Now for a five-sided shape. How many degrees do you need to turn each time? (Hint: 360 / 5 = ?)"
+    },
+    "vi": {
+      "Turtle.helpText5": "Mục tiêu: Vẽ một hình ngũ giác. Hướng dẫn: Bây giờ là một hình năm cạnh. Bạn cần xoay bao nhiêu độ mỗi lần? (Gợi ý: 360 / 5 = ?)"
+    }
+  },
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_TURTLE}",
+          "contents": [
+            { "kind": "block", "type": "turtle_move_internal", "fields": { "VALUE": "100" } },
+            { "kind": "block", "type": "turtle_turn_internal", "fields": { "VALUE": "72" } }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATLOOPS}",
+          "contents": [
+            { "kind": "block", "type": "turtle_repeat_internal", "fields": { "TIMES": "5" } }
+          ]
+        }
+      ]
+    },
+    "startBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_move_internal\" x=\"70\" y=\"70\"><field name=\"VALUE\">100</field></block></xml>"
+  },
+  "gameConfig": {
+    "type": "turtle",
+    "player": { "start": { "x": 200, "y": 200, "direction": 0, "penDown": true } }
+  },
+  "solution": {
+    "type": "match_drawing",
+    "pixelTolerance": 100,
+    "maxBlocks": 4,
+    "solutionScript": "for (let count = 0; count < 5; count++) { moveForward(100); turnRight(72); }"
+  },
+  "sounds": { "win": "/assets/turtle/win.mp3" }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "turtle-9",
+  "gameType": "turtle",
+  "level": 9,
+  "titleKey": "Games.turtle",
+  "descriptionKey": "Turtle.helpText9",
+  "translations": {
+    "en": {
+      "Turtle.helpText9": "Goal: Draw two squares of different colors. Hint: This requires a sequence: draw the first square, lift the pen, move, change color, then draw the second square."
+    },
+    "vi": {
+      "Turtle.helpText9": "Mục tiêu: Vẽ hai hình vuông có màu khác nhau. Hướng dẫn: Điều này đòi hỏi một trình tự: vẽ hình vuông đầu tiên, nhấc bút, di chuyển, đổi màu, sau đó vẽ hình vuông thứ hai."
+    }
+  },
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_TURTLE}",
+          "contents": [
+            { "kind": "block", "type": "turtle_move_internal", "fields": { "VALUE": "100" } },
+            { "kind": "block", "type": "turtle_turn_internal", "fields": { "VALUE": "90" } },
+            { "kind": "block", "type": "turtle_pen" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATCOLOUR}",
+          "contents": [
+            { "kind": "block", "type": "turtle_colour_internal" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATLOOPS}",
+          "contents": [
+            { "kind": "block", "type": "turtle_repeat_internal", "fields": { "TIMES": "4" } }
+          ]
+        }
+      ]
+    },
+    "startBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_move_internal\" x=\"70\" y=\"70\"><field name=\"VALUE\">100</field></block></xml>"
+  },
+  "gameConfig": {
+    "type": "turtle",
+    "player": { "start": { "x": 200, "y": 200, "direction": 0, "penDown": true } }
+  },
+  "solution": {
+    "type": "match_drawing",
+    "pixelTolerance": 600,
+    "maxBlocks": 13,
+    "solutionScript": "penColour('#0000ff'); for (let count = 0; count < 4; count++) { moveForward(100); turnRight(90); } penUp(); moveBackward(150); turnLeft(90); moveForward(50); penDown(); penColour('#ff0000'); for (let count = 0; count < 4; count++) { moveForward(100); turnRight(90); }"
+  },
+  "sounds": { "win": "/assets/turtle/win.mp3" }
+}

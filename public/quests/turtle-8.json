@@ -1,0 +1,56 @@
+{
+  "id": "turtle-8",
+  "gameType": "turtle",
+  "level": 8,
+  "titleKey": "Games.turtle",
+  "descriptionKey": "Turtle.helpText8",
+  "translations": {
+    "en": {
+      "Turtle.helpText8": "Goal: Draw a yellow star. Hint: Change the color first, then use a loop to draw the star. The turning angle for this star is 144 degrees."
+    },
+    "vi": {
+      "Turtle.helpText8": "Mục tiêu: Vẽ một ngôi sao vàng. Hướng dẫn: Hãy đổi màu trước, sau đó sử dụng vòng lặp để vẽ ngôi sao. Góc quay cho ngôi sao này là 144 độ."
+    }
+  },
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_TURTLE}",
+          "contents": [
+            { "kind": "block", "type": "turtle_move_internal", "fields": { "VALUE": "100" } },
+            { "kind": "block", "type": "turtle_turn_internal", "fields": { "VALUE": "144" } }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATCOLOUR}",
+          "contents": [
+            { "kind": "block", "type": "turtle_colour_internal" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATLOOPS}",
+          "contents": [
+            { "kind": "block", "type": "turtle_repeat_internal", "fields": { "TIMES": "5" } }
+          ]
+        }
+      ]
+    },
+    "startBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_move_internal\" x=\"70\" y=\"70\"><field name=\"VALUE\">100</field></block></xml>"
+  },
+  "gameConfig": {
+    "type": "turtle",
+    "player": { "start": { "x": 200, "y": 200, "direction": 0, "penDown": true } }
+  },
+  "solution": {
+    "type": "match_drawing",
+    "pixelTolerance": 350,
+    "maxBlocks": 4,
+    "solutionScript": "penColour('#ffff00'); for (let count = 0; count < 5; count++) { moveForward(100); turnRight(144); }"
+  },
+  "sounds": { "win": "/assets/turtle/win.mp3" }
+}

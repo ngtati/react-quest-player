@@ -1,0 +1,71 @@
+{
+  "id": "turtle-2",
+  "gameType": "turtle",
+  "level": 2,
+  "titleKey": "Games.turtle",
+  "descriptionKey": "Turtle.helpText2",
+  "translations": {
+    "en": {
+      "Turtle.helpText2": "Goal: Draw a square. Hint: You could do this with many blocks, but can you do it with just three? Check out the 'Loops' category."
+    },
+    "vi": {
+      "Turtle.helpText2": "Mục tiêu: Vẽ một hình vuông. Hướng dẫn: Bạn có thể làm điều này với nhiều khối, nhưng liệu bạn có thể làm chỉ với ba khối không? Hãy xem trong mục 'Vòng lặp'."
+    }
+  },
+  "blocklyConfig": {
+    "toolbox": {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_TURTLE}",
+          "contents": [
+            { 
+              "kind": "block", 
+              "type": "turtle_move_internal", 
+              "fields": { "VALUE": "100" } 
+            },
+            { 
+              "kind": "block", 
+              "type": "turtle_turn_internal", 
+              "fields": { "VALUE": "90" } 
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "%{BKY_GAMES_CATLOOPS}",
+          "contents": [
+            { 
+              "kind": "block", 
+              "type": "turtle_repeat_internal", 
+              "fields": { "TIMES": "4" } 
+            }
+          ]
+        }
+      ]
+    },
+    "startBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_move_internal\" x=\"70\" y=\"70\"><field name=\"VALUE\">100</field></block></xml>"
+  },
+  "gameConfig": {
+    "type": "turtle",
+    "player": { 
+      "start": { 
+        "x": 200, 
+        "y": 200, 
+        "direction": 0, 
+        "penDown": true 
+        } 
+      }
+  },
+  "solution": {
+    "type": "match_drawing",
+    "pixelTolerance": 100,
+    "maxBlocks": 3,
+    "solutionBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_repeat_internal\"><field name=\"TIMES\">4</field><statement name=\"DO\"><block type=\"turtle_move_internal\"><field name=\"VALUE\">100</field><next><block type=\"turtle_turn_internal\"><field name=\"VALUE\">90</field></block></next></block></statement></block></xml>",
+    "solutionScript": "for (let count = 0; count < 4; count++) { moveForward(100); turnRight(90); }"
+  },
+  "sounds": { 
+    "win": "/assets/turtle/win.mp3" 
+  }
+}

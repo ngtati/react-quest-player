@@ -6,10 +6,10 @@
   "descriptionKey": "Turtle.helpText1",
   "translations": {
     "en": {
-      "Turtle.helpText1": "To draw a square, you need to move forward and turn right four times."
+      "Turtle.helpText1": "Draw an L shape by moving forward and turning right."
     },
     "vi": {
-      "Turtle.helpText1": "Để vẽ một hình vuông, bạn cần tiến lên phía trước và rẽ phải bốn lần."
+      "Turtle.helpText1": "Vẽ hình chữ L bằng cách di chuyển về phía trước và rẽ phải."
     }
   },
   "blocklyConfig": {
@@ -31,17 +31,6 @@
               "fields": { "VALUE": "90" }
             }
           ]
-        },
-        {
-          "kind": "category",
-          "name": "%{BKY_GAMES_CATLOOPS}",
-          "contents": [
-            {
-              "kind": "block",
-              "type": "turtle_repeat_internal",
-              "fields": { "TIMES": "4" }
-            }
-          ]
         }
       ]
     },
@@ -61,8 +50,8 @@
   "solution": {
     "type": "match_drawing",
     "pixelTolerance": 100,
-    "solutionBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_repeat_internal\"><field name=\"TIMES\">4</field><statement name=\"DO\"><block type=\"turtle_move_internal\"><field name=\"VALUE\">100</field><next><block type=\"turtle_turn_internal\"><field name=\"VALUE\">90</field></block></next></block></statement></block></xml>",
-    "solutionScript": "for (var count = 0; count < 4; count++) { moveForward(100); turnRight(90); }"
+    "solutionBlocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"turtle_move_internal\"><field name=\"VALUE\">100</field><next><block type=\"turtle_turn_internal\"><field name=\"VALUE\">90</field><next><block type=\"turtle_move_internal\"><field name=\"VALUE\">100</field></block></next></block></next></block></xml>",
+    "solutionScript": "moveForward(100); turnRight(90); moveForward(100);"
   },
   "sounds": {
     "win": "/assets/turtle/win.mp3"
